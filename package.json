@@ -1,6 +1,6 @@
 {
   "name": "nodeotp-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Package that can one generate otp codes in a node js application",
   "main": "index.js",
   "scripts": {
