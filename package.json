@@ -1,0 +1,23 @@
+{
+  "name": "nodeotp-random-generator",
+  "version": "1.0.0",
+  "description": "A Package that can one generate otp codes in a node js application",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekoxyprince/nodeotp-random-generator.git"
+  },
+  "keywords": [
+    "otp",
+    "generator"
+  ],
+  "author": "Ekoxy Prince",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ekoxyprince/nodeotp-random-generator/issues"
+  },
+  "homepage": "https://github.com/ekoxyprince/nodeotp-random-generator#readme"
+}
