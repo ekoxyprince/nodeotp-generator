@@ -1,4 +1,3 @@
-#Project Title
 This is an OTP generator library which helps make generation of string numbers or mixture of both for creating OTP and random ids.
 ## Installation
 To install:
