@@ -39,6 +39,7 @@ This returns the generated user id.
 ### Encryption and Decryption: 
 This encrypts text and numbers using ceaser cipher encryption:<br>
 `const generated number = random.ceaserEncryption(text,shift)`<br>
+suggested is one/two until the algorithm is perfected. this is for basic encryption.
 the text is the number to be encrypted whereas the shift is the shift number which is an integer; 
 #### For decryption
 This returns the generated user id.
