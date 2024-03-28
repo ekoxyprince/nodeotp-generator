@@ -27,6 +27,9 @@ var RandomGenerator = /** @class */ (function () {
         return this.shuffleCharacters(a);
     };
     RandomGenerator.prototype.generateRandom = function (options) {
+        if (options.length > 12) {
+            throw new Error("length of random ".concat(options.type, " character cannot exceed 12"));
+        }
         var output;
         switch (options.type.toLowerCase()) {
             case "numerical":
@@ -69,6 +72,28 @@ var RandomGenerator = /** @class */ (function () {
         }
         output = i.slice(0, options.length);
         return output;
+    };
+    RandomGenerator.prototype.ceaserSipherAlgorithm = function (text, shift) {
+        var result = "";
+        for (var i = 0; i < text.length; i++) {
+            var charCode = text.charCodeAt(i);
+            if (charCode >= 65 && charCode <= 90) {
+                result += String.fromCharCode(((charCode - 65 + shift) % 25) + 65);
+            }
+            else if (charCode >= 97 && charCode <= 122) {
+                result += String.fromCharCode(((charCode - 97 + shift) % 25) + 97);
+            }
+            else {
+                result += text.charAt(i);
+            }
+        }
+        return result;
+    };
+    RandomGenerator.prototype.ceaserEncryption = function (text, shift) {
+        return this.ceaserSipherAlgorithm(text, shift);
+    };
+    RandomGenerator.prototype.ceaserDecryption = function (text, shift) {
+        return this.ceaserSipherAlgorithm(text, -shift);
     };
     return RandomGenerator;
 }());

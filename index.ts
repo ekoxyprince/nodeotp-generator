@@ -36,6 +36,9 @@ export class RandomGenerator {
     return this.shuffleCharacters(a);
   }
   generateRandom(options: Options) {
+    if(options.length>12){
+      throw new Error(`length of random ${options.type} character cannot exceed 12`)
+    }
     let output;
     switch (options.type.toLowerCase()) {
       case "numerical":
@@ -83,5 +86,25 @@ export class RandomGenerator {
     }
     output = i.slice(0,options.length)
     return output
+  }
+  private ceaserSipherAlgorithm(text:string,shift:number){
+   let result:string = ""
+   for(let i:number = 0; i<text.length;i++){
+     let charCode:number= text.charCodeAt(i)
+     if(charCode>=65 && charCode<= 90){
+      result+=String.fromCharCode(((charCode-65+shift)%25)+65)
+     }else if(charCode>=97&&charCode<=122){
+      result+=String.fromCharCode(((charCode-97+shift)%25)+97)
+     }else{
+       result+= text.charAt(i)
+     }
+   }
+   return result
+  }
+  ceaserEncryption(text:string,shift:number){
+    return this.ceaserSipherAlgorithm(text,shift)
+  }
+  ceaserDecryption(text:string,shift:number){
+    return this.ceaserSipherAlgorithm(text,-shift)
   }
 }
